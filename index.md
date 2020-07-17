@@ -1,12 +1,10 @@
 ## Chemay Shola
 
-I am a senior at the University of Washington studying bioengineering. Here is my [LinkedIn profofile](https://www.linkedin.com/in/chemayshola/)
+I am a senior at the University of Washington studying bioengineering. I am interested in wearable technology, specifically hearables. Currently, I am working in Dr. Yi Shen's lab on a hearable project.  Here is my [LinkedIn profile](https://www.linkedin.com/in/chemayshola/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Personal 
 
-### Chemay Shola
-
-Senior studying bioengineering at the University of Washington. 
+In my spare time I like to run. Here is my [Strava profile](https://www.strava.com/athletes/43295938). 
 
 ```markdown
 Syntax highlighted code block
