@@ -8,7 +8,7 @@ I have always been fascinated with sound growing up as a musician.
 
 ### Personal 
 
-In my spare time I like to run. Here is my [Strava profile](https://www.strava.com/athletes/43295938). 
+In my spare time I like to run and bike. Here is my [Strava profile](https://www.strava.com/athletes/43295938). I also am learning how to play the acoustic guitar with plans of learning electric as well. Another hobby I'd love to spend more time is climbing!
 
 ```markdown
 Syntax highlighted code block
