@@ -5,8 +5,6 @@ I am a senior at the University of Washington studying bioengineering. I am inte
 
 I have always been fascinated with sound growing up as a musician. After listening to a talk given by [Dr. Christof Koch](https://christofkoch.com) my intial interest in neuroscience grew deeper. I plan on continuing my education to the docterate level after graduation. My ultimate goal is to become a researcher and a professor. 
 
-
-
 ### Personal 
 
 In my spare time I like to run and bike. Here is my [Strava profile](https://www.strava.com/athletes/43295938). I also am learning how to play the acoustic guitar with plans of learning electric as well. Another hobby I'd love to spend more time is climbing!
