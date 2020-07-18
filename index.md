@@ -1,9 +1,11 @@
-## Chemay Shola
+## Professional
 Hello,
 
-I am a senior at the University of Washington studying bioengineering. I am interested in wearable technology, specifically hearables. Currently, I am working in [Dr. Yi Shen's](https://sphsc.washington.edu/content/yi-shen) lab on an open sourced hearable project.  Here is my [LinkedIn profile](https://www.linkedin.com/in/chemayshola/). 
+I am a senior at the University of Washington studying bioengineering. I am interested in wearable technology, specifically hearables. Currently, I am working in [Dr. Yi Shen's](https://sphsc.washington.edu/content/yi-shen) lab on an open sourced hearable project. 
 
 I have always been fascinated with sound growing up as a musician. After listening to a talk given by [Dr. Christof Koch](https://christofkoch.com) my intial interest in neuroscience grew deeper. I plan on continuing my education to the docterate level after graduation. My ultimate goal is to become a researcher and a professor. 
+
+Here is my [LinkedIn profile](https://www.linkedin.com/in/chemayshola/). 
 
 ### Personal 
 
