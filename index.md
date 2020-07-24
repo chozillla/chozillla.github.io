@@ -11,10 +11,13 @@ Here is my [LinkedIn profile](https://www.linkedin.com/in/chemayshola/).
 
 In my spare time I like to run and bike. I also am learning how to play the acoustic guitar with plans of learning electric as well. Another hobby I'd love to spend more time is climbing!
 
-<a style="display:inline-block;background-color:#FC5200;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href='http://strava.com/athletes/43295938/badge' target="_clean">
-  Follow me on
-  <img src='http://badges.strava.com/logo-strava.png' alt='Strava' style='margin-left:2px;vertical-align:text-bottom' height=13 width=51 />
-</a>
+<style>
+  .strava-badge- { display: inline-block; height: 48px; }
+  .strava-badge- img { visibility: hidden; height: 48px; }
+  .strava-badge-:hover { background-position: 0 -63px; }
+  .strava-badge-follow { height: 48px; width: 48px; background: url(//badges.strava.com/echelon-sprite-48.png) no-repeat 0 0; }
+</style>
+<a href="http://strava.com/athletes/43295938/badge" class="strava-badge- strava-badge-follow" target="_blank"><img src="//badges.strava.com/echelon-sprite-48.png" alt="Strava" /></a>
 
 ```markdown
 Syntax highlighted code block
