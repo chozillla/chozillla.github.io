@@ -156,7 +156,7 @@
                                    __/ |
                                   |___/
 </pre>
-<p>Copenhagen, Denmark<span class="cursor"></span></p>
+<p><span class="cursor"></span> <span id="local-time"></span></p>
 </div>
 
 <div class="section">
@@ -223,21 +223,36 @@ Last updated: December 2025 | Made with plain HTML
 
 <script>
     function updateTheme() {
-        const hour = new Date().getHours();
+        const now = new Date();
+        const hour = now.getHours();
         const isDark = hour >= 19 || hour < 7; // Dark mode from 7pm to 7am
 
         if (isDark) {
             document.body.classList.add('dark-mode');
-            document.getElementById('theme-indicator').textContent = '// night mode active (7pm-7am local time)';
         } else {
             document.body.classList.remove('dark-mode');
-            document.getElementById('theme-indicator').textContent = '// day mode active (7am-7pm local time)';
         }
+
+        // Display viewer's local time
+        const timeString = now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+        const dateString = now.toLocaleDateString('en-US', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+        document.getElementById('local-time').textContent = `${dateString} ${timeString}`;
+        document.getElementById('theme-indicator').textContent = isDark ? '// night mode' : '// day mode';
     }
 
     updateTheme();
-    // Update every minute in case user keeps page open
-    setInterval(updateTheme, 60000);
+    // Update every second for live clock
+    setInterval(updateTheme, 1000);
 </script>
 
 </body>
