@@ -3,451 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>~*~ Chemay Shola's Cyber Space ~*~</title>
+    <title>Chemay Shola - Bioengineering & Acoustics</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background-color: #000080;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffff00' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: #00ff00;
-            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
-            margin: 0;
-            padding: 20px;
-            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E%3C/text%3E%3C/svg%3E"), auto;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Space Mono', monospace;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(180deg, #000033 0%, #000066 50%, #000033 100%);
-            border: 5px ridge #c0c0c0;
-            padding: 20px;
-            box-shadow: 0 0 20px #ff00ff;
+            padding: 40px 20px;
         }
 
-        .marquee-container {
-            background: #ff00ff;
-            color: #ffff00;
-            padding: 10px;
-            border: 3px inset #c0c0c0;
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #222;
+            margin-bottom: 50px;
+        }
+
+        .terminal-prompt {
+            font-family: 'VT323', monospace;
+            color: #00ff88;
+            font-size: 14px;
             margin-bottom: 20px;
-            overflow: hidden;
-        }
-
-        .marquee-text {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 15s linear infinite;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            letter-spacing: 2px;
         }
 
         h1 {
-            text-align: center;
-            color: #ff00ff;
-            text-shadow: 3px 3px #00ffff, -1px -1px #ffff00;
-            font-size: 2.5em;
-            animation: rainbow 3s infinite;
+            font-family: 'VT323', monospace;
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
         }
 
-        @keyframes rainbow {
-            0% { color: #ff0000; }
-            16% { color: #ff8800; }
-            33% { color: #ffff00; }
-            50% { color: #00ff00; }
-            66% { color: #0088ff; }
-            83% { color: #ff00ff; }
-            100% { color: #ff0000; }
+        .tagline {
+            color: #888;
+            font-size: 1.1em;
+            margin-bottom: 30px;
         }
 
-        .profile-section {
-            text-align: center;
-            border: 3px dashed #00ffff;
-            padding: 20px;
-            margin: 20px 0;
-            background: rgba(0,0,0,0.5);
+        .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #00ff88;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border: 1px solid #00ff8844;
+            background: rgba(0, 255, 136, 0.05);
         }
 
-        .profile-pic {
-            border: 5px outset #c0c0c0;
-            border-radius: 0;
-            width: 150px;
-            height: 150px;
-            image-rendering: pixelated;
-        }
-
-        .blink {
-            animation: blink 1s step-start infinite;
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-
-        .neon-text {
-            color: #00ffff;
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
-        }
-
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        .info-table td {
-            border: 2px ridge #808080;
-            padding: 10px;
-            background: linear-gradient(180deg, #000044 0%, #000022 100%);
-        }
-
-        .info-table td:first-child {
-            background: #800080;
-            color: #ffff00;
-            font-weight: bold;
-            width: 30%;
+        /* Section styling */
+        section {
+            margin-bottom: 50px;
         }
 
         .section-header {
-            background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #ff00ff);
-            color: #000;
-            padding: 5px 10px;
-            font-weight: bold;
-            text-align: center;
-            border: 3px outset #c0c0c0;
-            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #222;
         }
 
+        .section-header h2 {
+            font-family: 'VT323', monospace;
+            font-size: 1.5em;
+            color: #00ff88;
+            font-weight: normal;
+        }
+
+        .section-header::before {
+            content: '>';
+            color: #00ff88;
+            font-family: 'VT323', monospace;
+        }
+
+        /* About section */
+        .about-content {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px;
+            position: relative;
+        }
+
+        .about-content::before {
+            content: '/* ABOUT */';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #0a0a0a;
+            padding: 0 10px;
+            color: #555;
+            font-size: 0.8em;
+        }
+
+        .about-content p {
+            color: #ccc;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .education-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 25px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .education-card:hover {
+            border-color: #00ff88;
+            transform: translateY(-2px);
+        }
+
+        .education-card h3 {
+            color: #fff;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #00ff88;
+            font-size: 0.85em;
+        }
+
+        /* Projects */
         .projects-list {
-            list-style: none;
-            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .projects-list li {
-            background: #000033;
-            border: 2px inset #808080;
-            padding: 10px;
-            margin: 10px 0;
+        .project-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: #111;
+            border: 1px solid #222;
+            transition: border-color 0.3s;
         }
 
-        .projects-list li::before {
-            content: ">> ";
-            color: #00ff00;
+        .project-item:hover {
+            border-color: #00ff88;
         }
 
-        a {
-            color: #00ffff;
-            text-decoration: underline;
+        .project-number {
+            font-family: 'VT323', monospace;
+            color: #00ff88;
+            font-size: 1.5em;
+            min-width: 40px;
         }
 
-        a:hover {
-            color: #ff00ff;
-            background: #ffff00;
+        .project-info h3 {
+            color: #fff;
+            font-size: 1em;
+            margin-bottom: 5px;
         }
 
-        a:visited {
-            color: #ff88ff;
+        .project-info p {
+            color: #888;
+            font-size: 0.9em;
         }
 
-        .button-90s {
-            background: linear-gradient(180deg, #c0c0c0 0%, #808080 100%);
-            border: 3px outset #c0c0c0;
-            color: #000;
+        .project-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 10px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff8844;
+            color: #00ff88;
+            font-size: 0.75em;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
             padding: 10px 20px;
-            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 5px;
+            background: #111;
+            border: 1px solid #222;
+            color: #ccc;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: #00ff88;
+            color: #00ff88;
+        }
+
+        /* Links */
+        .links-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: transparent;
+            border: 1px solid #00ff88;
+            color: #00ff88;
             text-decoration: none;
-            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9em;
+            transition: all 0.3s;
         }
 
-        .button-90s:hover {
-            border-style: inset;
-            background: linear-gradient(180deg, #808080 0%, #c0c0c0 100%);
+        .link-btn:hover {
+            background: #00ff88;
+            color: #0a0a0a;
         }
 
-        .button-90s:active {
-            border-style: inset;
+        .link-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
         }
 
-        .guestbook {
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
             text-align: center;
-            margin: 20px 0;
         }
 
-        .counter {
-            background: #000;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            padding: 5px 10px;
-            border: 2px inset #808080;
+        .footer-text {
+            color: #444;
+            font-size: 0.8em;
+        }
+
+        .retro-badge {
             display: inline-block;
-            margin: 10px;
-        }
-
-        .under-construction {
-            text-align: center;
-            padding: 10px;
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .fire {
-            display: inline-block;
-            animation: fire 0.5s infinite alternate;
-        }
-
-        @keyframes fire {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-3px); }
-        }
-
-        .footer {
-            text-align: center;
-            border-top: 3px ridge #c0c0c0;
-            padding-top: 20px;
             margin-top: 20px;
+            padding: 8px 15px;
+            border: 1px dashed #333;
+            color: #555;
+            font-size: 0.75em;
         }
 
-        .badge {
-            display: inline-block;
-            margin: 5px;
-            border: 2px outset #c0c0c0;
-            padding: 5px;
-            background: #c0c0c0;
-            font-size: 10px;
-            color: #000;
-        }
-
-        .stars {
+        /* Scanline effect (subtle) */
+        .scanlines {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1000;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            opacity: 0.3;
         }
 
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 2s infinite;
-        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
+            .container {
+                padding: 20px 15px;
+            }
 
-        .webring {
-            text-align: center;
-            background: #400040;
-            border: 3px ridge #c0c0c0;
-            padding: 10px;
-            margin: 20px 0;
-        }
+            .project-item {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-        .email-link {
-            font-size: 1.2em;
-        }
+            .links-section {
+                flex-direction: column;
+            }
 
-        .divider {
-            border: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, #ffff00, #00ffff, #ff00ff, transparent);
-            margin: 20px 0;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .skill-badge {
-            background: linear-gradient(180deg, #008080, #004040);
-            border: 2px outset #00ffff;
-            padding: 5px 15px;
-            color: #00ffff;
-            font-weight: bold;
+            .link-btn {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
+    <div class="scanlines"></div>
 
     <div class="container">
-        <div class="marquee-container">
-            <span class="marquee-text">
-                *** WELCOME TO MY HOMEPAGE *** YOU ARE VISITOR #<span id="visitor-count">1337</span> *** BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 *** 800x600 RESOLUTION ***
+        <header>
+            <div class="terminal-prompt">$ whoami</div>
+            <h1>Chemay Shola</h1>
+            <p class="tagline">Bioengineering & Acoustic Engineering Professional</p>
+            <span class="location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Copenhagen, Denmark
             </span>
-        </div>
+        </header>
 
-        <h1>
-            <span class="fire">~</span>*<span class="fire">~</span>
-            Chemay Shola
-            <span class="fire">~</span>*<span class="fire">~</span>
-        </h1>
-
-        <div class="profile-section">
-            <img src="https://avatars.githubusercontent.com/u/29260819?s=400&v=4" alt="Chemay's Photo" class="profile-pic">
-            <h2 class="neon-text">Bioengineering Professional</h2>
-            <p><span class="blink">***</span> Copenhagen, Denmark <span class="blink">***</span></p>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section-header">
-            <span class="fire">&gt;&gt;</span> ABOUT ME <span class="fire">&lt;&lt;</span>
-        </div>
-
-        <table class="info-table">
-            <tr>
-                <td>WHO AM I?</td>
-                <td>Bioengineering professional with an acoustic engineering background. Focused on hearing aid development and integrating data science with AI to improve accessibility solutions!</td>
-            </tr>
-            <tr>
-                <td>EDUCATION</td>
-                <td>
-                    <span class="fire">*</span> Engineering Acoustics - Technical University of Denmark<br>
-                    <span class="fire">*</span> Bioengineering - University of Washington
-                </td>
-            </tr>
-            <tr>
-                <td>INTERESTS</td>
-                <td>Open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications!</td>
-            </tr>
-            <tr>
-                <td>LOCATION</td>
-                <td>Copenhagen, Denmark</td>
-            </tr>
-        </table>
-
-        <hr class="divider">
-
-        <div class="section-header">
-            <span class="fire">&gt;&gt;</span> MY COOL PROJECTS <span class="fire">&lt;&lt;</span>
-        </div>
-
-        <ul class="projects-list">
-            <li>
-                <strong class="neon-text">ShenLab</strong> - Development of a user-adjustable hearing device (MATLAB)
-            </li>
-            <li>
-                <strong class="neon-text">Simulations</strong> - UW iGEM simulations for synthetic biology
-            </li>
-            <li>
-                <strong class="neon-text">ironclust</strong> - Spike sorting software (forked from Flatiron Institute)
-            </li>
-            <li>
-                <strong class="neon-text">VeluxInnovationDTU</strong> - Velux Challenge project
-            </li>
-        </ul>
-
-        <hr class="divider">
-
-        <div class="section-header">
-            <span class="fire">&gt;&gt;</span> SKILLS & TECH <span class="fire">&lt;&lt;</span>
-        </div>
-
-        <div class="skills-container">
-            <span class="skill-badge">MATLAB</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Data Science</span>
-            <span class="skill-badge">Machine Learning</span>
-            <span class="skill-badge">Acoustic Engineering</span>
-            <span class="skill-badge">Bioengineering</span>
-            <span class="skill-badge">AI/LLMs</span>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section-header">
-            <span class="fire">&gt;&gt;</span> CONNECT WITH ME <span class="fire">&lt;&lt;</span>
-        </div>
-
-        <div class="guestbook">
-            <a href="https://github.com/chozillla" class="button-90s" target="_blank">My GitHub</a>
-            <a href="https://linkedin.com/in/chemayshola" class="button-90s" target="_blank">My LinkedIn</a>
-        </div>
-
-        <div class="webring">
-            <p><strong>[ WEBRING ]</strong></p>
-            <p>&lt;&lt; Previous | <strong>Chemay's Corner</strong> | Next &gt;&gt;</p>
-        </div>
-
-        <hr class="divider">
-
-        <div class="under-construction">
-            <span style="font-size: 2em;">&#128679;</span>
-            <span class="blink" style="color: #ffff00; font-size: 1.2em;">UNDER CONSTRUCTION</span>
-            <span style="font-size: 2em;">&#128679;</span>
-            <p style="color: #ff8800;">More cool stuff coming soon!</p>
-        </div>
-
-        <div class="footer">
-            <div class="counter">
-                Visitors: <span id="counter-display">001337</span>
+        <section>
+            <div class="section-header">
+                <h2>ABOUT</h2>
             </div>
-            <br><br>
+            <div class="about-content">
+                <p>Bioengineering professional with an acoustic engineering background. Focused on hearing aid development and integrating data science with AI to improve accessibility solutions. Passionate about open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications.</p>
+            </div>
+        </section>
 
-            <div class="badge">Made with Notepad</div>
-            <div class="badge">Best viewed at 800x600</div>
-            <div class="badge">Netscape NOW!</div>
-            <div class="badge">NO FRAMES!</div>
+        <section>
+            <div class="section-header">
+                <h2>EDUCATION</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Engineering Acoustics</h3>
+                    <p>Technical University of Denmark</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bioengineering</h3>
+                    <p>University of Washington</p>
+                </div>
+            </div>
+        </section>
 
-            <br><br>
+        <section>
+            <div class="section-header">
+                <h2>PROJECTS</h2>
+            </div>
+            <div class="projects-list">
+                <div class="project-item">
+                    <span class="project-number">01</span>
+                    <div class="project-info">
+                        <h3>ShenLab</h3>
+                        <p>Development of a user-adjustable hearing device for personalized audio experiences</p>
+                        <span class="project-tag">MATLAB</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-number">02</span>
+                    <div class="project-info">
+                        <h3>UW iGEM Simulations</h3>
+                        <p>Computational simulations for synthetic biology research</p>
+                        <span class="project-tag">Simulation</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-number">03</span>
+                    <div class="project-info">
+                        <h3>Ironclust</h3>
+                        <p>Spike sorting software for neural signal processing</p>
+                        <span class="project-tag">Neuroscience</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-number">04</span>
+                    <div class="project-info">
+                        <h3>Velux Innovation DTU</h3>
+                        <p>Innovation challenge project at Technical University of Denmark</p>
+                        <span class="project-tag">Innovation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <p style="color: #808080; font-size: 12px;">
-                Last updated: December 2025<br>
-                &copy; 1999-2025 Chemay Shola. All rights reserved.<br>
-                <span class="blink">*</span> This page is Y2K compliant! <span class="blink">*</span>
-            </p>
+        <section>
+            <div class="section-header">
+                <h2>SKILLS</h2>
+            </div>
+            <div class="skills-grid">
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Data Science</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Acoustic Engineering</span>
+                <span class="skill-tag">Bioengineering</span>
+                <span class="skill-tag">Signal Processing</span>
+                <span class="skill-tag">AI/LLMs</span>
+            </div>
+        </section>
 
-            <p>
-                <a href="mailto:your-email@example.com" class="email-link">
-                    &#9993; Sign My Guestbook! &#9993;
+        <section>
+            <div class="section-header">
+                <h2>CONNECT</h2>
+            </div>
+            <div class="links-section">
+                <a href="https://github.com/chozillla" class="link-btn" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
                 </a>
-            </p>
-        </div>
+                <a href="https://linkedin.com/in/chemayshola" class="link-btn" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-text">Built with plain HTML & CSS</p>
+            <span class="retro-badge">// EST. 2025 //</span>
+        </footer>
     </div>
-
-    <script>
-        // Create twinkling stars
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 2 + 's';
-            star.style.width = Math.random() * 3 + 1 + 'px';
-            star.style.height = star.style.width;
-            starsContainer.appendChild(star);
-        }
-
-        // Fake visitor counter that increments
-        let count = 1337;
-        setInterval(() => {
-            count++;
-            document.getElementById('counter-display').textContent = String(count).padStart(6, '0');
-        }, 30000);
-    </script>
 </body>
 </html>
