@@ -222,10 +222,52 @@ Last updated: December 2025 | Made with plain HTML
 </div>
 
 <script>
+    let sunriseTime = null;
+    let sunsetTime = null;
+    let locationStatus = 'detecting...';
+
+    // Calculate sunrise/sunset based on latitude, longitude, and date
+    function calcSunTimes(lat, lng, date) {
+        const rad = Math.PI / 180;
+        const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+
+        // Solar declination
+        const declination = -23.45 * Math.cos(rad * 360 / 365 * (dayOfYear + 10));
+
+        // Hour angle
+        const cosHourAngle = -Math.tan(lat * rad) * Math.tan(declination * rad);
+
+        // Clamp for polar regions
+        const clampedCos = Math.max(-1, Math.min(1, cosHourAngle));
+        const hourAngle = Math.acos(clampedCos) / rad;
+
+        // Solar noon (approximate)
+        const solarNoon = 12 - lng / 15;
+
+        // Sunrise and sunset in hours
+        const sunrise = solarNoon - hourAngle / 15;
+        const sunset = solarNoon + hourAngle / 15;
+
+        return { sunrise, sunset };
+    }
+
+    function hoursToTimeString(hours) {
+        const h = Math.floor(hours);
+        const m = Math.floor((hours - h) * 60);
+        return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+    }
+
     function updateTheme() {
         const now = new Date();
-        const hour = now.getHours();
-        const isDark = hour >= 19 || hour < 7; // Dark mode from 7pm to 7am
+        const currentHours = now.getHours() + now.getMinutes() / 60;
+
+        let isDark;
+        if (sunriseTime !== null && sunsetTime !== null) {
+            isDark = currentHours < sunriseTime || currentHours >= sunsetTime;
+        } else {
+            // Fallback if no location
+            isDark = currentHours >= 19 || currentHours < 7;
+        }
 
         if (isDark) {
             document.body.classList.add('dark-mode');
@@ -247,7 +289,37 @@ Last updated: December 2025 | Made with plain HTML
             day: 'numeric'
         });
         document.getElementById('local-time').textContent = `${dateString} ${timeString}`;
-        document.getElementById('theme-indicator').textContent = isDark ? '// night mode' : '// day mode';
+
+        // Show sun info
+        let themeText = isDark ? '// night mode' : '// day mode';
+        if (sunriseTime !== null && sunsetTime !== null) {
+            themeText += ` | sunrise ${hoursToTimeString(sunriseTime)} | sunset ${hoursToTimeString(sunsetTime)}`;
+        } else {
+            themeText += ` | ${locationStatus}`;
+        }
+        document.getElementById('theme-indicator').textContent = themeText;
+    }
+
+    // Get user location and calculate sun times
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                const times = calcSunTimes(lat, lng, new Date());
+                sunriseTime = times.sunrise;
+                sunsetTime = times.sunset;
+                locationStatus = 'location found';
+                updateTheme();
+            },
+            (error) => {
+                locationStatus = 'location unavailable - using default';
+                updateTheme();
+            },
+            { timeout: 10000 }
+        );
+    } else {
+        locationStatus = 'geolocation not supported';
     }
 
     updateTheme();
