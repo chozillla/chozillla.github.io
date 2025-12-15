@@ -3,263 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHEMAY SHOLA</title>
+    <title>Chemay Shola</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
             background: #fff;
             color: #000;
-            font-size: 14px;
-            line-height: 1.5;
         }
 
-        .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
+        a {
+            color: #00f;
         }
 
-        header {
-            border-bottom: 2px solid #000;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+        a:visited {
+            color: #551a8b;
+        }
+
+        a:hover {
+            background: #00f;
+            color: #fff;
         }
 
         h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            line-height: 1;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
         }
 
-        .tagline {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 10px;
-            color: #666;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-        }
-
-        @media (max-width: 700px) {
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        .label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
+        .header {
             border-bottom: 1px solid #000;
-            padding-bottom: 5px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .ascii-name {
+            font-size: 11px;
+            line-height: 1.2;
             margin-bottom: 15px;
+            white-space: pre;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        .content p {
-            margin-bottom: 15px;
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .section-title::before {
+            content: "// ";
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #000;
+            margin: 30px 0;
         }
 
         ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 8px;
         }
 
-        li:last-child {
-            border-bottom: none;
+        li::before {
+            content: "> ";
         }
 
-        a {
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px solid #000;
+        .info-line {
+            margin: 5px 0;
         }
 
-        a:hover {
-            background: #000;
-            color: #fff;
+        .label {
+            display: inline;
         }
 
-        .project-title {
-            font-weight: 700;
-            display: block;
-        }
-
-        .project-desc {
-            color: #666;
-            font-size: 12px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill {
-            border: 1px solid #000;
-            padding: 5px 12px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .links-list {
-            display: flex;
-            gap: 20px;
-        }
-
-        .links-list a {
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            padding: 10px 20px;
-            border: 2px solid #000;
-            border-bottom: 2px solid #000;
-        }
-
-        footer {
-            margin-top: 60px;
+        .footer {
+            margin-top: 50px;
             padding-top: 20px;
-            border-top: 2px solid #000;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #999;
-        }
-
-        .marquee {
-            overflow: hidden;
-            white-space: nowrap;
             border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-            padding: 10px 0;
-            margin-bottom: 40px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-size: 12px;
+            color: #666;
         }
 
-        .marquee-inner {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
+        .blink {
+            animation: blink 1.5s step-start infinite;
         }
 
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .cursor::after {
+            content: "_";
+            animation: blink 1s step-start infinite;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>Chemay Shola</h1>
-            <p class="tagline">Copenhagen / Bioengineering / Acoustics</p>
-        </header>
 
-        <div class="marquee">
-            <span class="marquee-inner">
-                Hearing Aids — Data Science — Machine Learning — Accessibility — Open Source — LLMs — Biomedical — Signal Processing —
-                Hearing Aids — Data Science — Machine Learning — Accessibility — Open Source — LLMs — Biomedical — Signal Processing —
-            </span>
-        </div>
+<div class="header">
+<pre class="ascii-name">
+ _____ _                                _____ _           _
+/  __ \ |                              /  ___| |         | |
+| /  \/ |__   ___ _ __ ___   __ _ _   _\ `--.| |__   ___ | | __ _
+| |   | '_ \ / _ \ '_ ` _ \ / _` | | | |`--. \ '_ \ / _ \| |/ _` |
+| \__/\ | | |  __/ | | | | | (_| | |_| /\__/ / | | | (_) | | (_| |
+ \____/_| |_|\___|_| |_| |_|\__,_|\__, \____/|_| |_|\___/|_|\__,_|
+                                   __/ |
+                                  |___/
+</pre>
+<p>Copenhagen, Denmark<span class="cursor"></span></p>
+</div>
 
-        <div class="grid">
-            <div class="sidebar">
-                <div class="section">
-                    <div class="label">Location</div>
-                    <p>Copenhagen, DK</p>
-                </div>
+<div class="section">
+<p class="section-title">About</p>
+<p>Bioengineering professional with an acoustic engineering background. Currently working in the Discovery Team at Demant, focused on hearing aid development and integrating data science with AI to improve accessibility solutions.</p>
+<p>Incorporated GenAI into hearing aid products and driving the adoption of GenAI tools across Demant to enable employees to work more efficiently. Interested in open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications.</p>
+</div>
 
-                <div class="section">
-                    <div class="label">Education</div>
-                    <ul>
-                        <li>
-                            <div class="project-title">DTU</div>
-                            <div class="project-desc">Engineering Acoustics</div>
-                        </li>
-                        <li>
-                            <div class="project-title">UW</div>
-                            <div class="project-desc">Bioengineering</div>
-                        </li>
-                    </ul>
-                </div>
+<hr>
 
-                <div class="section">
-                    <div class="label">Links</div>
-                    <ul>
-                        <li><a href="https://github.com/chozillla">Github</a></li>
-                        <li><a href="https://linkedin.com/in/chemayshola">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
+<div class="section">
+<p class="section-title">Education</p>
+<ul>
+<li>Engineering Acoustics - Technical University of Denmark (DTU)</li>
+<li>Bioengineering - University of Washington (UW)</li>
+</ul>
+</div>
 
-            <div class="content">
-                <div class="section">
-                    <div class="label">About</div>
-                    <p>Bioengineering professional with an acoustic engineering background. Currently working in the Discovery Team at Demant, focused on hearing aid development and integrating data science with AI to improve accessibility solutions.</p>
-                    <p>Incorporated GenAI into hearing aid products and driving the adoption of GenAI tools across Demant to enable employees to work more efficiently. Interested in open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications.</p>
-                </div>
+<hr>
 
-                <div class="section">
-                    <div class="label">Projects</div>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/chozillla/ShenLab" class="project-title">ShenLab</a>
-                            <div class="project-desc">User-adjustable hearing device development / MATLAB</div>
-                        </li>
-                        <li>
-                            <a href="https://github.com/chozillla/Simulations" class="project-title">UW iGEM Simulations</a>
-                            <div class="project-desc">Computational simulations for synthetic biology</div>
-                        </li>
-                    </ul>
-                </div>
+<div class="section">
+<p class="section-title">Projects</p>
+<ul>
+<li><a href="https://github.com/chozillla/ShenLab">ShenLab</a> - User-adjustable hearing device development / MATLAB</li>
+<li><a href="https://github.com/chozillla/Simulations">UW iGEM Simulations</a> - Computational simulations for synthetic biology</li>
+</ul>
+</div>
 
-                <div class="section">
-                    <div class="label">Skills</div>
-                    <div class="skills">
-                        <span class="skill">MATLAB</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">Data Science</span>
-                        <span class="skill">ML</span>
-                        <span class="skill">Acoustics</span>
-                        <span class="skill">Bioengineering</span>
-                        <span class="skill">DSP</span>
-                        <span class="skill">LLMs</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<hr>
 
-        <footer>
-            2025 — Unlimited Potential
-        </footer>
-    </div>
+<div class="section">
+<p class="section-title">Skills</p>
+<p>MATLAB | Python | Data Science | Machine Learning | Acoustics | Bioengineering | DSP | LLMs</p>
+</div>
+
+<hr>
+
+<div class="section">
+<p class="section-title">Links</p>
+<ul>
+<li><a href="https://github.com/chozillla">github.com/chozillla</a></li>
+<li><a href="https://linkedin.com/in/chemayshola">linkedin.com/in/chemayshola</a></li>
+</ul>
+</div>
+
+<div class="footer">
+Last updated: December 2025 | Made with plain HTML
+</div>
+
 </body>
 </html>
