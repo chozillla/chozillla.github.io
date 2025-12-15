@@ -3,131 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemay Shola</title>
+    <title>CHEMAY SHOLA</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Verdana, Geneva, sans-serif;
-            font-size: 13px;
-            line-height: 1.6;
-            max-width: 800px;
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .wrapper {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f6f6ef;
-            color: #000;
+            padding: 30px;
         }
 
-        a {
-            color: #000;
-        }
-
-        a:visited {
-            color: #828282;
+        header {
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 18px;
-            margin: 0 0 5px 0;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            line-height: 1;
         }
 
-        h2 {
-            font-size: 14px;
-            margin: 20px 0 10px 0;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        .header {
-            background: #ff6600;
-            padding: 8px;
-            margin: -20px -20px 20px -20px;
-        }
-
-        .header a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .subtitle {
+        .tagline {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
             color: #666;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .content p {
             margin-bottom: 15px;
         }
 
         ul {
-            margin: 10px 0;
-            padding-left: 20px;
+            list-style: none;
         }
 
         li {
-            margin: 5px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
         }
 
-        .section {
-            margin-bottom: 20px;
+        li:last-child {
+            border-bottom: none;
         }
 
-        .links a {
-            margin-right: 15px;
+        a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
+        a:hover {
+            background: #000;
+            color: #fff;
         }
 
-        .footer {
-            color: #828282;
+        .project-title {
+            font-weight: 700;
+        }
+
+        .project-desc {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            border: 1px solid #000;
+            padding: 5px 12px;
             font-size: 11px;
-            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .links-list {
+            display: flex;
+            gap: 20px;
+        }
+
+        .links-list a {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-bottom: 2px solid #000;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+        }
+
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+            margin-bottom: 40px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .marquee-inner {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <a href="/">Chemay Shola</a>
+    <div class="wrapper">
+        <header>
+            <h1>Chemay Shola</h1>
+            <p class="tagline">Copenhagen / Bioengineering / Acoustics</p>
+        </header>
+
+        <div class="marquee">
+            <span class="marquee-inner">
+                Hearing Aids — Data Science — Machine Learning — Accessibility — Open Source — LLMs — Biomedical — Signal Processing —
+                Hearing Aids — Data Science — Machine Learning — Accessibility — Open Source — LLMs — Biomedical — Signal Processing —
+            </span>
+        </div>
+
+        <div class="grid">
+            <div class="sidebar">
+                <div class="section">
+                    <div class="label">Location</div>
+                    <p>Copenhagen, DK</p>
+                </div>
+
+                <div class="section">
+                    <div class="label">Education</div>
+                    <ul>
+                        <li>
+                            <div class="project-title">DTU</div>
+                            <div class="project-desc">Engineering Acoustics</div>
+                        </li>
+                        <li>
+                            <div class="project-title">UW</div>
+                            <div class="project-desc">Bioengineering</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="label">Links</div>
+                    <ul>
+                        <li><a href="https://github.com/chozillla">Github</a></li>
+                        <li><a href="https://linkedin.com/in/chemayshola">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <div class="label">About</div>
+                    <p>Bioengineering professional with an acoustic engineering background. Focused on hearing aid development and integrating data science with AI to improve accessibility solutions.</p>
+                    <p>Interested in open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications.</p>
+                </div>
+
+                <div class="section">
+                    <div class="label">Projects</div>
+                    <ul>
+                        <li>
+                            <div class="project-title">ShenLab</div>
+                            <div class="project-desc">User-adjustable hearing device development / MATLAB</div>
+                        </li>
+                        <li>
+                            <div class="project-title">UW iGEM Simulations</div>
+                            <div class="project-desc">Computational simulations for synthetic biology</div>
+                        </li>
+                        <li>
+                            <div class="project-title">Ironclust</div>
+                            <div class="project-desc">Spike sorting software for neural signal processing</div>
+                        </li>
+                        <li>
+                            <div class="project-title">Velux Innovation DTU</div>
+                            <div class="project-desc">Innovation challenge project</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="label">Skills</div>
+                    <div class="skills">
+                        <span class="skill">MATLAB</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Data Science</span>
+                        <span class="skill">ML</span>
+                        <span class="skill">Acoustics</span>
+                        <span class="skill">Bioengineering</span>
+                        <span class="skill">DSP</span>
+                        <span class="skill">LLMs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            2025 — Unlimited Potential
+        </footer>
     </div>
-
-    <p class="subtitle">Bioengineering & Acoustic Engineering | Copenhagen, Denmark</p>
-
-    <div class="section">
-        <h2>About</h2>
-        <p>Bioengineering professional with an acoustic engineering background. Focused on hearing aid development and integrating data science with AI to improve accessibility solutions. Interested in open-source LLMs, democratizing AI access, and machine learning for biomedical applications.</p>
-    </div>
-
-    <div class="section">
-        <h2>Education</h2>
-        <ul>
-            <li>Engineering Acoustics - Technical University of Denmark</li>
-            <li>Bioengineering - University of Washington</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>ShenLab</strong> - User-adjustable hearing device development (MATLAB)</li>
-            <li><strong>UW iGEM Simulations</strong> - Computational simulations for synthetic biology</li>
-            <li><strong>Ironclust</strong> - Spike sorting software for neural signal processing</li>
-            <li><strong>Velux Innovation DTU</strong> - Innovation challenge project</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Skills</h2>
-        <p>MATLAB, Python, Data Science, Machine Learning, Acoustic Engineering, Bioengineering, Signal Processing, AI/LLMs</p>
-    </div>
-
-    <div class="section">
-        <h2>Links</h2>
-        <p class="links">
-            <a href="https://github.com/chozillla">GitHub</a>
-            <a href="https://linkedin.com/in/chemayshola">LinkedIn</a>
-        </p>
-    </div>
-
-    <hr>
-
-    <p class="footer">Last updated: December 2025</p>
 </body>
 </html>
