@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chemay Shola</title>
     <style>
+        :root {
+            --bg: #fff;
+            --text: #000;
+            --link: #00f;
+            --link-visited: #551a8b;
+            --link-hover-bg: #00f;
+            --link-hover-text: #fff;
+            --border: #000;
+            --muted: #666;
+        }
+
+        .dark-mode {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --link: #6db3f2;
+            --link-visited: #b388ff;
+            --link-hover-bg: #6db3f2;
+            --link-hover-text: #0a0a0a;
+            --border: #444;
+            --muted: #888;
+        }
+
         body {
             font-family: "Courier New", Courier, monospace;
             font-size: 14px;
@@ -12,21 +34,22 @@
             max-width: 700px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: #fff;
-            color: #000;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
         }
 
         a {
-            color: #00f;
+            color: var(--link);
         }
 
         a:visited {
-            color: #551a8b;
+            color: var(--link-visited);
         }
 
         a:hover {
-            background: #00f;
-            color: #fff;
+            background: var(--link-hover-bg);
+            color: var(--link-hover-text);
         }
 
         h1 {
@@ -37,7 +60,7 @@
         }
 
         .header {
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
@@ -66,7 +89,7 @@
 
         hr {
             border: none;
-            border-top: 1px dashed #000;
+            border-top: 1px dashed var(--border);
             margin: 30px 0;
         }
 
@@ -95,9 +118,15 @@
         .footer {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #000;
+            border-top: 1px solid var(--border);
             font-size: 12px;
-            color: #666;
+            color: var(--muted);
+        }
+
+        .theme-indicator {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 10px;
         }
 
         .blink {
@@ -186,7 +215,27 @@
 
 <div class="footer">
 Last updated: December 2025 | Made with plain HTML
+<div class="theme-indicator" id="theme-indicator"></div>
 </div>
+
+<script>
+    function updateTheme() {
+        const hour = new Date().getHours();
+        const isDark = hour >= 19 || hour < 7; // Dark mode from 7pm to 7am
+
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            document.getElementById('theme-indicator').textContent = '// night mode active (7pm-7am local time)';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.getElementById('theme-indicator').textContent = '// day mode active (7am-7pm local time)';
+        }
+    }
+
+    updateTheme();
+    // Update every minute in case user keeps page open
+    setInterval(updateTheme, 60000);
+</script>
 
 </body>
 </html>
