@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~ Chemay Shola's Cyber Space ~*~</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+        body {
+            background-color: #000080;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffff00' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #00ff00;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 20px;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E%3C/text%3E%3C/svg%3E"), auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #000033 0%, #000066 50%, #000033 100%);
+            border: 5px ridge #c0c0c0;
+            padding: 20px;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        .marquee-container {
+            background: #ff00ff;
+            color: #ffff00;
+            padding: 10px;
+            border: 3px inset #c0c0c0;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff00ff;
+            text-shadow: 3px 3px #00ffff, -1px -1px #ffff00;
+            font-size: 2.5em;
+            animation: rainbow 3s infinite;
+        }
+
+        @keyframes rainbow {
+            0% { color: #ff0000; }
+            16% { color: #ff8800; }
+            33% { color: #ffff00; }
+            50% { color: #00ff00; }
+            66% { color: #0088ff; }
+            83% { color: #ff00ff; }
+            100% { color: #ff0000; }
+        }
+
+        .profile-section {
+            text-align: center;
+            border: 3px dashed #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .profile-pic {
+            border: 5px outset #c0c0c0;
+            border-radius: 0;
+            width: 150px;
+            height: 150px;
+            image-rendering: pixelated;
+        }
+
+        .blink {
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .neon-text {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .info-table td {
+            border: 2px ridge #808080;
+            padding: 10px;
+            background: linear-gradient(180deg, #000044 0%, #000022 100%);
+        }
+
+        .info-table td:first-child {
+            background: #800080;
+            color: #ffff00;
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #ff00ff);
+            color: #000;
+            padding: 5px 10px;
+            font-weight: bold;
+            text-align: center;
+            border: 3px outset #c0c0c0;
+            margin: 20px 0 10px 0;
+        }
+
+        .projects-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projects-list li {
+            background: #000033;
+            border: 2px inset #808080;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .projects-list li::before {
+            content: ">> ";
+            color: #00ff00;
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ff00ff;
+            background: #ffff00;
+        }
+
+        a:visited {
+            color: #ff88ff;
+        }
+
+        .button-90s {
+            background: linear-gradient(180deg, #c0c0c0 0%, #808080 100%);
+            border: 3px outset #c0c0c0;
+            color: #000;
+            padding: 10px 20px;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-90s:hover {
+            border-style: inset;
+            background: linear-gradient(180deg, #808080 0%, #c0c0c0 100%);
+        }
+
+        .button-90s:active {
+            border-style: inset;
+        }
+
+        .guestbook {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .counter {
+            background: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 5px 10px;
+            border: 2px inset #808080;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .under-construction {
+            text-align: center;
+            padding: 10px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .fire {
+            display: inline-block;
+            animation: fire 0.5s infinite alternate;
+        }
+
+        @keyframes fire {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-3px); }
+        }
+
+        .footer {
+            text-align: center;
+            border-top: 3px ridge #c0c0c0;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin: 5px;
+            border: 2px outset #c0c0c0;
+            padding: 5px;
+            background: #c0c0c0;
+            font-size: 10px;
+            color: #000;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .webring {
+            text-align: center;
+            background: #400040;
+            border: 3px ridge #c0c0c0;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .email-link {
+            font-size: 1.2em;
+        }
+
+        .divider {
+            border: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, #ffff00, #00ffff, #ff00ff, transparent);
+            margin: 20px 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(180deg, #008080, #004040);
+            border: 2px outset #00ffff;
+            padding: 5px 15px;
+            color: #00ffff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="marquee-container">
+            <span class="marquee-text">
+                *** WELCOME TO MY HOMEPAGE *** YOU ARE VISITOR #<span id="visitor-count">1337</span> *** BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 *** 800x600 RESOLUTION ***
+            </span>
+        </div>
+
+        <h1>
+            <span class="fire">~</span>*<span class="fire">~</span>
+            Chemay Shola
+            <span class="fire">~</span>*<span class="fire">~</span>
+        </h1>
+
+        <div class="profile-section">
+            <img src="https://avatars.githubusercontent.com/u/29260819?s=400&v=4" alt="Chemay's Photo" class="profile-pic">
+            <h2 class="neon-text">Bioengineering Professional</h2>
+            <p><span class="blink">***</span> Copenhagen, Denmark <span class="blink">***</span></p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section-header">
+            <span class="fire">&gt;&gt;</span> ABOUT ME <span class="fire">&lt;&lt;</span>
+        </div>
+
+        <table class="info-table">
+            <tr>
+                <td>WHO AM I?</td>
+                <td>Bioengineering professional with an acoustic engineering background. Focused on hearing aid development and integrating data science with AI to improve accessibility solutions!</td>
+            </tr>
+            <tr>
+                <td>EDUCATION</td>
+                <td>
+                    <span class="fire">*</span> Engineering Acoustics - Technical University of Denmark<br>
+                    <span class="fire">*</span> Bioengineering - University of Washington
+                </td>
+            </tr>
+            <tr>
+                <td>INTERESTS</td>
+                <td>Open-source LLMs, democratizing AI access, and leveraging machine learning for biomedical applications!</td>
+            </tr>
+            <tr>
+                <td>LOCATION</td>
+                <td>Copenhagen, Denmark</td>
+            </tr>
+        </table>
+
+        <hr class="divider">
+
+        <div class="section-header">
+            <span class="fire">&gt;&gt;</span> MY COOL PROJECTS <span class="fire">&lt;&lt;</span>
+        </div>
+
+        <ul class="projects-list">
+            <li>
+                <strong class="neon-text">ShenLab</strong> - Development of a user-adjustable hearing device (MATLAB)
+            </li>
+            <li>
+                <strong class="neon-text">Simulations</strong> - UW iGEM simulations for synthetic biology
+            </li>
+            <li>
+                <strong class="neon-text">ironclust</strong> - Spike sorting software (forked from Flatiron Institute)
+            </li>
+            <li>
+                <strong class="neon-text">VeluxInnovationDTU</strong> - Velux Challenge project
+            </li>
+        </ul>
+
+        <hr class="divider">
+
+        <div class="section-header">
+            <span class="fire">&gt;&gt;</span> SKILLS & TECH <span class="fire">&lt;&lt;</span>
+        </div>
+
+        <div class="skills-container">
+            <span class="skill-badge">MATLAB</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Data Science</span>
+            <span class="skill-badge">Machine Learning</span>
+            <span class="skill-badge">Acoustic Engineering</span>
+            <span class="skill-badge">Bioengineering</span>
+            <span class="skill-badge">AI/LLMs</span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section-header">
+            <span class="fire">&gt;&gt;</span> CONNECT WITH ME <span class="fire">&lt;&lt;</span>
+        </div>
+
+        <div class="guestbook">
+            <a href="https://github.com/chozillla" class="button-90s" target="_blank">My GitHub</a>
+            <a href="https://linkedin.com/in/chemayshola" class="button-90s" target="_blank">My LinkedIn</a>
+        </div>
+
+        <div class="webring">
+            <p><strong>[ WEBRING ]</strong></p>
+            <p>&lt;&lt; Previous | <strong>Chemay's Corner</strong> | Next &gt;&gt;</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="under-construction">
+            <span style="font-size: 2em;">&#128679;</span>
+            <span class="blink" style="color: #ffff00; font-size: 1.2em;">UNDER CONSTRUCTION</span>
+            <span style="font-size: 2em;">&#128679;</span>
+            <p style="color: #ff8800;">More cool stuff coming soon!</p>
+        </div>
+
+        <div class="footer">
+            <div class="counter">
+                Visitors: <span id="counter-display">001337</span>
+            </div>
+            <br><br>
+
+            <div class="badge">Made with Notepad</div>
+            <div class="badge">Best viewed at 800x600</div>
+            <div class="badge">Netscape NOW!</div>
+            <div class="badge">NO FRAMES!</div>
+
+            <br><br>
+
+            <p style="color: #808080; font-size: 12px;">
+                Last updated: December 2025<br>
+                &copy; 1999-2025 Chemay Shola. All rights reserved.<br>
+                <span class="blink">*</span> This page is Y2K compliant! <span class="blink">*</span>
+            </p>
+
+            <p>
+                <a href="mailto:your-email@example.com" class="email-link">
+                    &#9993; Sign My Guestbook! &#9993;
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Create twinkling stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            starsContainer.appendChild(star);
+        }
+
+        // Fake visitor counter that increments
+        let count = 1337;
+        setInterval(() => {
+            count++;
+            document.getElementById('counter-display').textContent = String(count).padStart(6, '0');
+        }, 30000);
+    </script>
+</body>
+</html>
